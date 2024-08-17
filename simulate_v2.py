@@ -32,7 +32,7 @@ for step in range(n_steps):
     # Example action: control rotor thrusts
     # Replace this with your control logic or RL action
     # action = np.array([-0.05, 0.53, 0.3])  # roll, pitch, vertical acceleration
-    action = np.array([0.005, 0.00, 0.0000, 0.005, 5.35, 5.35])  # just hover values
+    action = np.array([0.004, 0.00, 0.0000, 0.005, 5.35, 5.35])  # just hover values
 
     # Apply the action (modify data.qfrc_applied or actuator controls)
     data.ctrl[:] = action

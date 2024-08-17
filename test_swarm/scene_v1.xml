@@ -1,6 +1,6 @@
 <mujoco model="scene v1">
-  <!-- <include file="modelv1.xml"/> -->
-  <include file="collision_test.xml"/>
+  <include file="model_v1.xml"/>
+  <!-- <include file="collision_test.xml"/> -->
 
   <statistic center="2 0 0.1" extent="0.2" meansize=".05"/>
 
