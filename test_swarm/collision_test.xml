@@ -1,0 +1,23 @@
+<mujoco model="U-shaped Structure">
+  <option timestep="0.001" integrator="RK4"/>
+  
+  <worldbody>
+    <!-- Define the vertical leg on the left -->
+    <body name="left_leg" pos="-0.4 0 0">
+      <freejoint/>
+      <geom type="box" size="0.05 0.2 0.1" rgba="0.6 0.4 0.2 1"/> <!-- size: width, height, depth -->
+    </body>
+
+    <!-- Define the vertical leg on the right -->
+    <body name="right_leg" pos="0.4 0 0">
+      <freejoint/>
+      <geom type="box" size="0.05 0.2 0.1" rgba="0.6 0.4 0.2 1"/>
+    </body>
+
+    <!-- Define the horizontal base connecting the legs -->
+    <body name="base" pos="0 0 -0.1">
+      <freejoint/>
+      <geom type="box" size="0.5 0.05 0.1" rgba="0.6 0.4 0.2 1"/>
+    </body>
+  </worldbody>
+</mujoco>
