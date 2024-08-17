@@ -1,7 +1,7 @@
 # Bitcraze Crazyflie 2 Description (MJCF)
 
 Requires MuJoCo 2.2.2 or later.
-
+<!-- 
 ## Overview
 
 This package contains a simplified robot description (MJCF) of the Crazyflie 2
@@ -24,4 +24,4 @@ available [ROS description](https://github.com/whoenig/crazyflie_ros).
 
 ## License
 
-This model is released under an [MIT License](LICENSE).
+This model is released under an [MIT License](LICENSE). -->
