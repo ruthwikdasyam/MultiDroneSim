@@ -67,10 +67,16 @@
 
   <worldbody>
 
+      <!-- <body name="support" pos="0 0 0.01">
+        <geom type="box" size="0.05 0.05 0.04" rgba="0.3 0.3 0.3 1"/>
+      </body> -->
+
     <body name="plank" pos="0 0 0.05">
       <freejoint/>
       <inertial pos="0 0 0" mass="0.05" diaginertia="5.2083e-6 3.7501e-4 3.7542e-4"/>
-      <geom type="box" size="0.3 0.01 0.005" rgba="0.6 0.4 0.2 1"/>
+      <geom type="box" size="0.3 0.01 0.005" rgba="0.6 0.4 0.2 1" friction="0.2 0.005 0.0001" />
+      <!-- <inertial pos="0 0 0" mass="0.05" diaginertia="1.042e-3 1.042e-3 2.083e-3"/>
+      <geom type="box" size="0.5 0.5 0.01" rgba="0.6 0.4 0.2 1" friction="1 0.01 0.0001"/> -->
 
     <!-- <body name="plank" pos="0 0 0.05">
       <freejoint/>
@@ -180,11 +186,12 @@
   </body>
     
   <!-- Defining a sphere body -->
-    <body name="left_ball" pos="0 0 0.07">
-        <freejoint />
-        <inertial pos="0 0 0" mass="0.005" diaginertia="5.2083e-8 3.7501e-5 3.7542e-5"/>
-        <geom type="sphere" size="0.01" rgba="0.75 0.75 0.75 1"/>
-    </body>
+  <body name="left_ball" pos="0 0 0.1">
+    <freejoint />
+    <inertial pos="0 0 0" mass="0.02" diaginertia="8e-8 8e-8 8e-8"/>
+    <geom type="sphere" size="0.01" rgba="0.75 0.75 0.75 1" friction="0.2 0.005 0.0001"/>
+  </body>
+
 
   </worldbody>
 

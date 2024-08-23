@@ -5,7 +5,7 @@ import mujoco.viewer
 
 
 # Load the MuJoCo model and create data object
-model = mujoco.MjModel.from_xml_path("scene.xml")
+model = mujoco.MjModel.from_xml_path("scene_3.xml")
 data = mujoco.MjData(model)
 
 # model2 = mujoco.MjModel.from_xml_path("scene2.xml")
@@ -32,7 +32,9 @@ for step in range(n_steps):
     # Example action: control rotor thrusts
     # Replace this with your control logic or RL action
     # action = np.array([-0.05, 0.53, 0.3])  # roll, pitch, vertical acceleration
-    action = np.array([0.004, 0.00, 0.0000, 0.005, 5.35, 5.35])  # just hover values
+    fly = 4.37
+    action = np.array([fly, fly, fly, 4.365])  # just hover values
+    # action = np.array([0.00, 0.00, 0.0000, 0.00, 6.09, 6.09])  # just hover values
 
     # Apply the action (modify data.qfrc_applied or actuator controls)
     data.ctrl[:] = action

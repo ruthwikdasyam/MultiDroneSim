@@ -3,30 +3,33 @@
 
   <compiler inertiafromgeom="true" meshdir="assets" autolimits="true"/>
 
-    <worldbody>
-        <!-- Ground plane -->
-        <!-- <geom type="plane" size="2 2 0.1" rgba="0.9 0.9 0.9 1"/> -->
-        <!-- See-saw base (pivot point) -->
-        <body name="seesaw_base" pos="0 0 0.05">
-            <geom type="box" size="0.05 0.05 0.01" rgba="0.2 0.2 0.2 1"/>
-            <!-- See-saw plank -->
-            <body name="seesaw_plank" pos="0 0 0.05">
-                <joint name="seesaw_hinge" type="hinge" pos="0 0 0" axis="0 1 0" range="-30 30" damping="0.1"/>
-                <geom type="box" size="0.5 0.05 0.02" rgba="0.6 0.4 0.2 1"/>
-                <!-- Left Cube -->
-            </body>
-        </body>
+  <worldbody>
+    <!-- Ground plane -->
+    <!-- <geom type="plane" size="2 2 0.1" rgba="0.9 0.9 0.9 1"/> -->
+    
+    <!-- See-saw base (pivot point) -->
+    <body name="seesaw_base" pos="0.25 0 0.05">
+      <freejoint />
+      <geom type="box" size="0.05 0.05 0.01" rgba="0.2 0.2 0.2 1"/>
+    </body>
 
-        <body name="left_ball" pos="0.5 1 1">
-            <freejoint />
-            <!-- <inertial pos="0 0 0" mass="0.005" /> -->
-            <inertial pos="0 0 0" mass="0.005" diaginertia="5.2083e-8 3.7501e-5 3.7542e-5"/>
-            <geom type="sphere" size="0.05" rgba="0.75 0.75 0.75 1"/>
-        </body>
-    </worldbody>
+    <!-- See-saw plank -->
+    <body name="seesaw_plank" pos="0 0 0.05">
+      <freejoint />
+      <inertial pos="0 0 0" mass="0.1" diaginertia="1e-4 1e-4 1e-4"/>
+      <geom type="box" size="0.5 0.05 0.02" rgba="0.6 0.4 0.2 1" friction="3 0.01 0.05"/>
+    </body>
 
-    <!-- Actuator to control the hinge joint -->
-    <actuator>
-        <motor joint="seesaw_hinge" ctrlrange="-0.161 0.161" gear="0.0002"/>
-    </actuator>
+    <!-- Left Ball -->
+    <body name="left_ball" pos="0 0 1"> <!-- Adjusted initial position -->
+      <freejoint />
+      <inertial pos="0 0 0" mass="0.05" diaginertia="1e-5 1e-5 1e-5"/>
+      <geom type="sphere" size="0.05" rgba="0.75 0.75 0.75 1" friction="2 0.01 0.5"/>
+    </body>
+  </worldbody>
+
+  <!-- Actuator to control the hinge joint -->
+  <!-- <actuator>
+    <motor joint="seesaw_hinge" ctrlrange="-0.161 0.161" gear="0.0002"/>
+  </actuator> -->
 </mujoco>
