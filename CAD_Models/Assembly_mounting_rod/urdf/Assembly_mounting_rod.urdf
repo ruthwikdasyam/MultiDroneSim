@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="Assembly_mounting_rod">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.026479 0.046811 0.13843"
+        rpy="0 0 0" />
+      <mass
+        value="0.192" />
+      <inertia
+        ixx="5.6605E-05"
+        ixy="6.0086E-20"
+        ixz="2.0959E-19"
+        iyy="0.0058066"
+        iyz="1.3754E-20"
+        izz="0.00577" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Assembly_mounting_rod/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Assembly_mounting_rod/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+</robot>

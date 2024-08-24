@@ -63,6 +63,7 @@
     <mesh file="cf2_collision_29.obj"/>
     <mesh file="cf2_collision_30.obj"/>
     <mesh file="cf2_collision_31.obj"/>
+    <mesh file="mountingrod.obj"/>
   </asset>
 
   <worldbody>
@@ -71,6 +72,13 @@
         <geom type="box" size="0.05 0.05 0.04" rgba="0.3 0.3 0.3 1"/>
       </body> -->
 
+    <!-- <body name ="mounting_rod" pos="0 0 0.1">
+      <freejoint/>
+      <inertial pos="0 0 0" mass="0.05" diaginertia="5.2083e-6 3.7501e-4 3.7542e-4"/>
+      <geom mesh="mountingrod" material="polished_plastic" class="visual"/>
+      <geom mesh="mountingrod" material="polished_plastic" class="collision"/>
+    </body> -->
+
     <body name="plank" pos="0 0 0.05">
       <freejoint/>
       <inertial pos="0 0 0" mass="0.05" diaginertia="5.2083e-6 3.7501e-4 3.7542e-4"/>
@@ -78,11 +86,6 @@
       <!-- <inertial pos="0 0 0" mass="0.05" diaginertia="1.042e-3 1.042e-3 2.083e-3"/>
       <geom type="box" size="0.5 0.5 0.01" rgba="0.6 0.4 0.2 1" friction="1 0.01 0.0001"/> -->
 
-    <!-- <body name="plank" pos="0 0 0.05">
-      <freejoint/>
-      <inertial pos="0 0 0" mass="0.05" diaginertia="5.2083e-6 3.7501e-4 3.7542e-4"/>
-      <geom type="box" size="0.3 0.01 0.005" rgba="0.6 0.4 0.2 1"/>
-    </body> -->
 
     <!-- drone on the left -->
     <body name="cf2" pos="0.27 0 0.01" childclass="cf2">
