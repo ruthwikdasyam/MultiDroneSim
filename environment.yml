@@ -1,0 +1,7 @@
+name: drones
+channels:
+  - defaults
+dependencies:
+  - python=3.10
+  - pip
+prefix: /home/ruthwik/anaconda3/envs/drones

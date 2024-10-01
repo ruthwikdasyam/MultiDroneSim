@@ -1,5 +1,5 @@
-<mujoco model="cf2">
-  <option integrator="RK4" density="1.225" viscosity="1.8e-5"/>
+<mujoco model="cf1">
+  <option solver = "PGS" integrator="RK4" density="1.225" viscosity="1.8e-5"/>
 
   <compiler inertiafromgeom="false" meshdir="assets" autolimits="true"/>
 
@@ -79,7 +79,7 @@
     </body> -->
 
 
-<body name="plank" pos="0 0 0.05">
+<!-- <body name="plank" pos="0 0 0.05">
   <freejoint/>
 <inertial pos="0 0 0" mass="0.005" diaginertia="9.75e-7 3.7504e-4 3.755e-4"/>
   <geom type="box" size="0.3 0.015 0.003" rgba="0.6 0.4 0.2 1" friction="0.2 0.005 0.0001" />
@@ -92,15 +92,15 @@
   <body name="bottom_plank" pos="0 -0.015 0.01">
 <inertial pos="0 0 0" mass="0.005" diaginertia="4.54e-7 3.7504e-4 3.7504e-4"/>
     <geom type="box" size="0.3 0.003 0.01" rgba="0.6 0.4 0.2 1" friction="0.2 0.005 0.0001"/>
-  </body>
+  </body> -->
 
 
 
       
 
     <!-- drone on the left -->
-    <body name="cf2" pos="0.27 0 0.025" childclass="cf2">
-      <!-- <freejoint/> -->
+    <body name="cf2" pos="0.0 0 0.025" childclass="cf2">
+      <freejoint/>
       <!-- <joint name="cf2_hinge" type="hinge" /> -->
       <inertial pos="0 0 0" mass="0.027" diaginertia="2.3951e-5 2.3951e-5 3.2347e-5"/>
       <camera name="track1" pos="-1 0 .5" xyaxes="0 -1 0 1 0 2" mode="track"/>
@@ -152,9 +152,9 @@
 
     <!-- each side - 0.10 m -->
     <!-- Drone on the right -->
-    <body name="cf3" pos="-0.27 0 0.025" childclass="cf2">
-      <!-- <freejoint/> -->
-      <!-- <joint name="cf3_hinge" type="hinge"/> -->
+    <!-- <body name="cf3" pos="-0.27 0 0.025" childclass="cf2">
+      <freejoint/>
+      <joint name="cf3_hinge" type="hinge"/>
       <inertial pos="0 0 0" mass="0.027" diaginertia="2.3951e-5 2.3951e-5 3.2347e-5"/>
       <camera name="track2" pos="-1 1 .5" xyaxes="1 -1 0 1 0 2" mode="trackcom"/>
       <geom mesh="cf2_0" material="propeller_plastic" class="visual"/>
@@ -199,14 +199,14 @@
       <site name="imu2"/>
       <site name="actuation2"/>
     </body>
-  </body>
+  </body> -->
     
   <!-- Defining a sphere body -->
-  <body name="left_ball" pos="0 0 0.1">
+  <!-- <body name="left_ball" pos="0 0 0.1">
     <freejoint />
     <inertial pos="0 0 0" mass="0.02" diaginertia="8e-8 8e-8 8e-8"/>
     <geom type="sphere" size="0.01" rgba="0.75 0.75 0.75 1" friction="0.2 0.005 0.0001"/>
-  </body>
+  </body> -->
 
 
   </worldbody>
@@ -214,15 +214,15 @@
   <actuator>
     <!-- <motor joint="cf2_hinge" ctrlrange="-1 1" gear="0 0 0 0 0 -0.01" name="cf2_thrust"/>
     <motor joint="cf3_hinge" ctrlrange="-1 1" gear="0 0 0 0 0 -0.01" name="cf3_thrust"/> -->
-    <motor class="cf2" ctrlrange="-1 1" gear="0 0 0 -0.0001 0 0" site="actuation1" name="x_moment1"/>
-    <motor class="cf2" ctrlrange="-1 1" gear="0 0 0 -0.0001 0 0" site="actuation2" name="x_moment2"/>
-    <motor class="cf2" ctrlrange="-1 1" gear="0 0 0 0 -0.0001 0" site="actuation1" name="y_moment1"/>
-    <motor class="cf2" ctrlrange="-1 1" gear="0 0 0 0 -0.0001 0" site="actuation2" name="y_moment2"/>
+    <motor class="cf2" ctrlrange="-1 1" gear="0 0 0 0.0001 0 0" site="actuation1" name="x_moment1"/>
+    <!-- <motor class="cf2" ctrlrange="-1 1" gear="0 0 0 -0.0001 0 0" site="actuation2" name="x_moment2"/> -->
+    <motor class="cf2" ctrlrange="-1 1" gear="0 0 0 0 0.0001 0" site="actuation1" name="y_moment1"/>
+    <!-- <motor class="cf2" ctrlrange="-1 1" gear="0 0 0 0 -0.0001 0" site="actuation2" name="y_moment2"/> -->
     <!-- <motor class="cf2" ctrlrange="-1 1" gear="0 0 0 0 0 -0.01" site="actuation" name="z_moment"/> -->
     <!-- <motor class="cf2" ctrlrange="0 0.5" gear="1 0 0 0 0 0" site="actuation" name="body_thrust_x"/> -->
     <!-- <motor class="cf2" ctrlrange="0 0.5" gear="0 1 0 0 0 0" site="actuation" name="body_thrust_y"/> -->
-    <motor class="cf2" ctrlrange="0 10" gear="0 0 0.1 0 0 0" site="actuation1" name="body_thrust_z1"/>
-    <motor class="cf2" ctrlrange="0 10" gear="0 0 0.1 0 0 0" site="actuation2" name="body_thrust_z2"/>
+    <motor class="cf2" ctrlrange="-10 10" gear="0 0 1 0 0 0" site="actuation1" name="body_thrust_z1"/>
+    <!-- <motor class="cf2" ctrlrange="0 10" gear="0 0 0.1 0 0 0" site="actuation2" name="body_thrust_z2"/> -->
   </actuator>
 
   <sensor>
@@ -230,9 +230,9 @@
     <accelerometer name="body_linacc1" site="imu1"/>
     <framequat name="body_quat1" objtype="site" objname="imu1"/>
 
-    <gyro name="body_gyro2" site="imu2"/>
+    <!-- <gyro name="body_gyro2" site="imu2"/>
     <accelerometer name="body_linacc2" site="imu2"/>
-    <framequat name="body_quat2" objtype="site" objname="imu2"/>
+    <framequat name="body_quat2" objtype="site" objname="imu2"/> -->
   </sensor>
 
 <!-- <keyframe>

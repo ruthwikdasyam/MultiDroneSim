@@ -1,0 +1,16 @@
+<mujoco model="Assembly_mounting_rod_v5">
+  <compiler meshdir="./" />
+
+  <asset>
+    <mesh name="base_link" file="base_link.STL" scale="1 1 1"/>
+  </asset>
+
+  <worldbody>
+    <body name="base_link" pos="0 0 0">
+      <joint type="free"/>
+      <inertial pos="0 -0.1 0" mass="0.192" 
+                fullinertia="5.6605E-05 0.00577 0.0058066 -3.5505E-20 -7.1115E-22 9.058E-21" />
+      <geom type="mesh" mesh="base_link" pos="0 0 0" rgba="0.79216 0.81961 0.93333 1"/>
+    </body>
+  </worldbody>
+</mujoco>

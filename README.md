@@ -1,27 +1,42 @@
-# Bitcraze Crazyflie 2 Description (MJCF)
+# Multi-Drone Simulation - MuJoCo
 
-Requires MuJoCo 2.2.2 or later.
-<!-- 
+Requires **MuJoCo 2.2.2** or later.
+
 ## Overview
 
-This package contains a simplified robot description (MJCF) of the Crazyflie 2
-model from [Bitcraze](https://www.bitcraze.io/). It is derived from the publicly
-available [ROS description](https://github.com/whoenig/crazyflie_ros).
+The files consist of simulations of drones in MuJoCo environments.  
+This package includes a simplified robot description (MJCF) of the Crazyflie 2 model from [Bitcraze](https://www.bitcraze.io/). It is derived from the publicly available [ROS description](https://github.com/whoenig/crazyflie_ros).
 
 <p float="left">
-  <img src="cf2.png" width="400">
+  <img src="images/1_drones.png" width="200">
+  <img src="images/2_drones.png" width="200">
+  <img src="images/3_drones.png" width="200">
+  <img src="images/4_drones.png" width="200">
 </p>
 
-## URDF → MJCF Conversion
+## Installation
 
-1. Converted the DAE mesh file in `crazyflie_description` to OBJ format using [Blender](https://www.blender.org/).
-2. Processed the OBJ file with [obj2mjcf](https://github.com/kevinzakka/obj2mjcf).
-3. Added a `<freejoint>` to the root body, and some lighting in the XML file.
-4. Set the inertial properties to values obtained from the datasheet and [MIT's system identification](https://groups.csail.mit.edu/robotics-center/public_papers/Landry15.pdf)
-    * These properties are set via inertial tag i.e. `pos ="0 0 0" mass="0.027" diaginertia="2.3951e-5 2.3951e-5 3.2347e-5"`
-5. Added combined thrust and body moments about a `site` placed at the inertial frame. The `ctrlrange` limits are currently arbitrary and need to be further tuned.
-6. Added `scene.xml` which includes the quadrotor, with a textured ground plane and skybox.
+The required packages are included in the Conda environment file. Use this command to create a Conda environment in your system:
 
-## License
+```bash
+conda env create -f environment.yml
 
-This model is released under an [MIT License](LICENSE). -->
+
+## Package Description
+
+- **1_drones folder**: 
+  - Contains a MuJoCo environment with a closed-loop PID controller that maintains the drone at a certain height.
+  - The **PID values** and **goal positions** can be modified in the `simulate1_v1.py` file.
+  - The `simulate1_v1.py` file defines the goal position in 3D space, enabling the drone to move in X, Y, and Z directions.
+  - The `simulate1_v2.py` file defines the goal position only in the Z-axis, causing the drone to lift and hold its position at the goal height without changing its X and Y positions.
+
+- **2_drones folder**: 
+  - Contains the `simulate2.py` file, which simulates two drones attached to either end of a slab with a spherical object in the middle.
+  - This setup resembles a cooperative multi-drone transport system.
+  - A minimal fly-off thrust is applied to both drones equally, lifting the slab and balancing the ball in the middle.
+
+- **3_drones folder**: 
+  - Contains the `simulate3.py` file, demonstrating the same cooperative transport simulation using three drones instead of two.
+
+- **4_drones folder**: 
+  - Contains the `simulate4.py` file, demonstrating the cooperative transport simulation with four drones.

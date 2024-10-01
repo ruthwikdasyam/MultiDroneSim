@@ -1,0 +1,10 @@
+<mujoco model="Assembly_mounting_rod">
+  <worldbody>
+    <body name="base_link" pos="0 0.25 0.1">
+      <inertial pos="0.026479 0.046811 0.13843" mass="0.192"
+                fullinertia="5.6605E-05 0.0058066 0.00577 6.0086E-20 2.0959E-19 1.3754E-20" />
+      <geom type="box" size="0.05 0.05 0.15" rgba="0.79216 0.81961 0.93333 1" 
+            friction="1 0.1 0.1" />
+    </body>
+  </worldbody>
+</mujoco>
