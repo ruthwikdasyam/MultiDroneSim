@@ -8,7 +8,8 @@ The files consist of simulations of drones in MuJoCo environments.
 This package includes a simplified robot description (MJCF) of the Crazyflie 2 model from [Bitcraze](https://www.bitcraze.io/). It is derived from the publicly available [ROS description](https://github.com/whoenig/crazyflie_ros).
 
 
-![drone1](images/drone_1.png)
+![drone1](1_drones.png)
+![drone2](images/2_drones.png)
 
 
 ## Installation
