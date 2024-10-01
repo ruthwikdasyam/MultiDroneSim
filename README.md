@@ -19,8 +19,8 @@ This package includes a simplified robot description (MJCF) of the Crazyflie 2 m
 The required packages are included in the Conda environment file. Use this command to create a Conda environment in your system:
 
 ```bash
-conda env create -f environment.yml
-
+conda env create -f environment.yml 
+```
 
 ## Package Description
 
