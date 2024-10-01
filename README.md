@@ -26,21 +26,23 @@ The required packages are included in the Conda environment file. Use this comma
 conda env create -f environment.yml 
 ```
 
-## Package Description
+### Package Descriptions
 
-- **1_drones folder**: 
-  - Contains a MuJoCo environment with a closed-loop PID controller that maintains the drone at a certain height.
-  - The **PID values** and **goal positions** can be modified in the `simulate1_v1.py` file.
-  - The `simulate1_v1.py` file defines the goal position in 3D space, enabling the drone to move in X, Y, and Z directions.
-  - The `simulate1_v2.py` file defines the goal position only in the Z-axis, causing the drone to lift and hold its position at the goal height without changing its X and Y positions.
+- **1_drones folder**:  
+  - This folder contains a MuJoCo environment featuring a closed-loop PID controller that maintains a drone at a specified height.
+  - You can modify the **PID values** and **goal positions** directly in the `simulate1_v1.py` file.
+  - The `simulate1_v1.py` file allows the drone to move in the X, Y, and Z directions by defining the goal position in 3D space.
+  - In contrast, the `simulate1_v2.py` file focuses solely on the Z-axis, enabling the drone to lift and maintain its position at the desired height while keeping its X and Y coordinates constant.
 
-- **2_drones folder**: 
-  - Contains the `simulate2.py` file, which simulates two drones attached to either end of a slab with a spherical object in the middle.
-  - This setup resembles a cooperative multi-drone transport system.
-  - A minimal fly-off thrust is applied to both drones equally, lifting the slab and balancing the ball in the middle.
+- **2_drones folder**:  
+  - This folder contains the `simulate2.py` file, which simulates two drones positioned at either end of a slab, with a spherical object balanced in the center.
+  - This setup is designed to mimic a cooperative multi-drone transport system.
+  - Both drones receive a minimal fly-off thrust, which allows them to lift the slab while keeping the ball balanced in the middle.
 
-- **3_drones folder**: 
-  - Contains the `simulate3.py` file, demonstrating the same cooperative transport simulation using three drones instead of two.
+- **3_drones folder**:  
+  - This folder includes the `simulate3.py` file, which extends the cooperative transport simulation by utilizing three drones instead of two.
+  - The setup mirrors the structure found in the `2_drones` folder, adapting it for an additional drone to enhance collaborative transport capabilities.
 
-- **4_drones folder**: 
-  - Contains the `simulate4.py` file, demonstrating the cooperative transport simulation with four drones.
+- **4_drones folder**:  
+  - This folder features the `simulate4.py` file, showcasing the cooperative transport simulation with four drones.
+  - The setup builds upon the previous configurations, demonstrating how four drones can work together to achieve balanced transport of the slab and the spherical object.
