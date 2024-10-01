@@ -9,12 +9,12 @@ This package includes a simplified robot description (MJCF) of the Crazyflie 2 m
 
 
 <p align="center">
-  <img src="1_drones.png" width="200" alt="Drone 1">
-  <img src="2_drones.png" width="200" alt="Drone 2">
+  <img src="1_drones.png" width="400" alt="Drone 1">
+  <img src="2_drones.png" width="400" alt="Drone 2">
 </p>
 <p align="center">
-  <img src="3_drones.png" width="200" alt="Drone 3">
-  <img src="4_drones.png" width="200" alt="Drone 4">
+  <img src="3_drones.png" width="400" alt="Drone 3">
+  <img src="4_drones.png" width="400" alt="Drone 4">
 </p>
 
 
